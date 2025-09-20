@@ -9,6 +9,11 @@ public class Saltar : MonoBehaviour
     [Header("Configuracion")]
     [SerializeField] private float fuerzaSalto = 5f;
 
+    // Audio
+    [Header("Audio")]
+    [SerializeField] private AudioClip sonidoSalto;  // Asignar desde el inspector
+    private AudioSource audioSource;
+
     // Variables de uso interno en el script
     private bool puedoSaltar = true;
     private bool saltando = false;
@@ -20,6 +25,14 @@ public class Saltar : MonoBehaviour
     private void OnEnable()
     {
         miRigidbody2D = GetComponent<Rigidbody2D>();
+
+        // Inicializar el AudioSource
+        audioSource = GetComponent<AudioSource>();
+        if (audioSource == null)
+        {
+            audioSource = gameObject.AddComponent<AudioSource>();
+        }
+
     }
 
     // Codigo ejecutado en cada frame del juego (Intervalo variable)
@@ -29,6 +42,9 @@ public class Saltar : MonoBehaviour
         {
             puedoSaltar = false;
         }
+
+        
+
     }
 
     //las fuerzas se aplican en fixedUpdate, ya que este utiliza un intervalo fijo
@@ -38,6 +54,13 @@ public class Saltar : MonoBehaviour
         {
             miRigidbody2D.AddForce(Vector2.up * fuerzaSalto, ForceMode2D.Impulse);
             // por defecto cuando aplicamos fuerza, AddForce lo hace en modo Force, pero en el caso del impulso es distinto
+
+            // Reproducir sonido al presionar salto
+            if (sonidoSalto != null)
+            {
+                audioSource.PlayOneShot(sonidoSalto);
+            }
+
             saltando = true;
         }
     }

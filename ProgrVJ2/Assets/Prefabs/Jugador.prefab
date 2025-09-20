@@ -204,6 +204,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuerzaSalto: 10
+  sonidoSalto: {fileID: 8300000, guid: e603a46a8f6f58e4c8c9961acc75f9c6, type: 3}
 --- !u!114 &5835599680414144960
 MonoBehaviour:
   m_ObjectHideFlags: 0

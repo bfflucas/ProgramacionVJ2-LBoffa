@@ -1,13 +1,12 @@
 using UnityEngine;
 using System;
+using UnityEngine.Events;
 
 public class Jugador : MonoBehaviour
 {
     [Header("Configuracion")]
-    [SerializeField] private float vida = 100f;
+    [SerializeField] private int vida = 5;
 
-    // Evento para notificar cambios de vida
-    public event Action<float> OnVidaCambiada;
 
     // Evento especial para cuando se queda sin vida
     public event Action OnGameOver;
@@ -15,27 +14,32 @@ public class Jugador : MonoBehaviour
     // Evento para cuando gana la partida
     public event Action OnGameWon;
 
-    public void ModificarVida(float puntos)
+    [SerializeField] private UnityEvent<int> OnLivesChanged;
+
+    private void OnEnable()
     {
+        OnLivesChanged.Invoke(vida);
+    }
+
+    public void ModificarVida(int puntos)
+    {
+        Debug.Log($"Vida antes: {vida}, Modificando: {puntos}");
+
         vida += puntos;
-        if (vida < 0)
+        
+        if (vida <= 0)
         {
             vida=0;
+            OnLivesChanged.Invoke(vida);
+            OnGameOver?.Invoke();  // Disparar Game Over 
+            return;  // Salir del método después de Game Over
         }
-        // Notificar cambio
-        OnVidaCambiada?.Invoke(vida);
+        Debug.Log($"Vida después: {vida}");
+        OnLivesChanged.Invoke(vida);
 
-        // Si la vida es 0 o menos -> disparar Game Over
-        if (!EstaVivo())
-        {
-            OnGameOver?.Invoke();
-        }
+        
     }
 
-    private bool EstaVivo()
-    {
-        return vida > 0;
-    }
 
     
 
@@ -48,7 +52,7 @@ public class Jugador : MonoBehaviour
         }
     }
 
-    public float GetVidas()
+    public int GetVidas()
     {
         return vida;
     }

@@ -3,8 +3,7 @@ using TMPro;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] private TextMeshProUGUI textoVidas;
-    [SerializeField] private TextMeshProUGUI textoGameOver;
+    [SerializeField] private HUDController _hud;
     [SerializeField] private Jugador jugador;
 
     private bool gameOver;
@@ -16,12 +15,10 @@ public class LevelManager : MonoBehaviour
 
         if (jugador != null)
         {
-            jugador.OnVidaCambiada += ActualizarTextoVida;
             jugador.OnGameOver += MostrarGameOver;
             jugador.OnGameWon += MostrarGameWon;
-
-            ActualizarTextoVida(jugador.GetVidas()); // inicializar
-            textoGameOver.gameObject.SetActive(false); // ocultar al inicio
+            
+            _hud.ActualizarVidasHUD(jugador.GetVidas());
         }
 
     }
@@ -45,10 +42,6 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    private void ActualizarTextoVida(float nuevaVida)
-    {
-        textoVidas.text = "Energía: " + nuevaVida;
-    }
 
 
     private void MostrarGameOver()
@@ -58,8 +51,8 @@ public class LevelManager : MonoBehaviour
         // Congelar el juego
         Time.timeScale = 0f;
 
-        textoGameOver.gameObject.SetActive(true);
-        textoGameOver.text = "GAME OVER - presiona R para reiniciar...";
+        //textoGameOver.gameObject.SetActive(true);
+        //textoGameOver.text = "GAME OVER - presiona R para reiniciar...";
         Debug.Log("GAME OVER");
     }
 
@@ -70,8 +63,8 @@ public class LevelManager : MonoBehaviour
         // Congelar el juego
         Time.timeScale = 0f;
 
-        textoGameOver.gameObject.SetActive(true);
-        textoGameOver.text = "Ganaste!! - presiona R para reiniciar...";
+        //textoGameOver.gameObject.SetActive(true);
+        //textoGameOver.text = "Ganaste!! - presiona R para reiniciar...";
     }
 
 }

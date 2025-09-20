@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -166829032584039537, guid: 8d0041a31a796f3428bd527f1babc96e, type: 3}
+      propertyPath: cooldown
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1745389208821778460, guid: 8d0041a31a796f3428bd527f1babc96e, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -106,3 +110,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   restarVida: 1
+  cooldown: 1
