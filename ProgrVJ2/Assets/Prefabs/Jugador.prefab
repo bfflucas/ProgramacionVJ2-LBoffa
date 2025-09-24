@@ -13,9 +13,8 @@ GameObject:
   - component: {fileID: 4168798336864556636}
   - component: {fileID: 490898165878618012}
   - component: {fileID: 271021725890413824}
-  - component: {fileID: 7232884601092893758}
-  - component: {fileID: 3474949401050032019}
   - component: {fileID: 5835599680414144960}
+  - component: {fileID: -1422864110067603847}
   m_Layer: 9
   m_Name: Jugador
   m_TagString: Player
@@ -178,33 +177,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &7232884601092893758
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5961396755291001653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84c80b1f550e682458ab087652a2abb1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocidad: 15
---- !u!114 &3474949401050032019
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5961396755291001653}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6db3a5f194b787344b951e663a808681, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fuerzaSalto: 10
-  sonidoSalto: {fileID: 8300000, guid: e603a46a8f6f58e4c8c9961acc75f9c6, type: 3}
 --- !u!114 &5835599680414144960
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,3 +190,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   vida: 5
+  OnLivesChanged:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &-1422864110067603847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5961396755291001653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 05c71f5a4da3d5745aa930eda4b22151, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  velocidad: 8
+  velocidadAire: 5
+  fuerzaSalto: 10
+  sonidoSalto: {fileID: 8300000, guid: e603a46a8f6f58e4c8c9961acc75f9c6, type: 3}

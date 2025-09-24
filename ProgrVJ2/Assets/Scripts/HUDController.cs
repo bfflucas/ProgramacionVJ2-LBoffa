@@ -8,6 +8,7 @@ public class HUDController : MonoBehaviour
     [SerializeField] GameObject contenedorVida;
 
 
+
     public void ActualizarVidasHUD(int vidas)
     {
        
