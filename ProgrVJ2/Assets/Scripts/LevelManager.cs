@@ -1,70 +1,130 @@
 using UnityEngine;
-using TMPro;
+using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    public static LevelManager Instance { get; private set; }
+
+    [Header("Referencias")]
     [SerializeField] private HUDController _hud;
     [SerializeField] private Jugador jugador;
 
-    private bool gameOver;
-    private bool gameWon;
+    // Estado del juego
+    //private bool won;
+    //public bool Won
+    //{
+    //    get => won;
+    //    set => won = value;
+    //}
+    //private bool lose;
+    //public bool Lose
+    //{
+    //    get => lose;
+    //    set => lose = value;
+    //}
+    public bool Won { get; private set; }
+    public bool Lose { get; private set; }
 
-    void Start()
+    private int experiencia = 0;
+
+    private void Awake()
     {
-        gameOver = false;
+        // Singleton
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject); // mantiene entre escenas
+
+        
+    }
+
+    private void Start()
+    {
+        Won = false;
+        Lose = false;
 
         if (jugador != null)
         {
-            jugador.OnGameOver += MostrarGameOver;
-            jugador.OnGameWon += MostrarGameWon;
-            
             _hud.ActualizarVidasHUD(jugador.GetVidas());
+            _hud.ActualizarEstrellasHUD(jugador.GetEstrellas());
+            _hud.ActualizarExperienciaHUD(experiencia);
         }
-
     }
 
-    void Update()
+
+    //private void Update()
+    //{
+    //    //if(won||lose)
+    //    if ((won || lose) && SceneManager.GetActiveScene().name != "EscenaFin")
+    //    {
+    //        SceneManager.LoadScene("EscenaFin");
+    //    }
+    //}
+
+    //private void ReiniciarJuego()
+    //{
+        
+    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    //}
+    
+
+    // ----------------------------
+    // EXPERIENCIA
+    // ----------------------------
+    public void AgregarExperiencia(int cantidad)
     {
-        if (gameOver || gameWon)
+        experiencia += cantidad;
+        Debug.Log("Experiencia total: " + experiencia);
+
+        // Actualizar HUD si existe
+        if (_hud != null)
         {
-           
-            //if (Input.anyKeyDown) para cualquier tecla
-
-            // Solo reinicia con la tecla R
-            if (Input.GetKeyDown(KeyCode.R))
-            {
-                // Reiniciar escena actual
-                Time.timeScale = 1f; // restaurar tiempo
-                UnityEngine.SceneManagement.SceneManager.LoadScene(
-                    UnityEngine.SceneManagement.SceneManager.GetActiveScene().buildIndex
-                );
-            }
+            _hud.ActualizarExperienciaHUD(experiencia);
+            _hud.MostrarXPBonus(cantidad, experiencia);
         }
     }
 
-
-
-    private void MostrarGameOver()
+    public int GetExperiencia()
     {
-        gameOver = true;
-
-        // Congelar el juego
-        Time.timeScale = 0f;
-
-        //textoGameOver.gameObject.SetActive(true);
-        //textoGameOver.text = "GAME OVER - presiona R para reiniciar...";
-        Debug.Log("GAME OVER");
+        return experiencia;
     }
 
-    private void MostrarGameWon()
+    public void ReiniciarExperiencia()
     {
-        gameOver = true;
-
-        // Congelar el juego
-        Time.timeScale = 0f;
-
-        //textoGameOver.gameObject.SetActive(true);
-        //textoGameOver.text = "Ganaste!! - presiona R para reiniciar...";
+        experiencia = 0;
+        if (_hud != null)
+            _hud.ActualizarExperienciaHUD(experiencia);
     }
+
+    // ----------------------------
+    // METODOS DE FIN DE JUEGO
+    // ----------------------------
+    public void GameOver()
+    {
+        Lose = true;
+        Won = false;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("EscenaFin");
+    }
+
+    public void GameWin()
+    {
+        Won = true;
+        Lose = false;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene("EscenaFin");
+    }
+
+    public void ResetFlags()
+    {
+        Won = false;
+        Lose = false;
+    }
+
+
 
 }

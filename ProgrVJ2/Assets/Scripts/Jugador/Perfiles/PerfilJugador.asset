@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62afeee8e943aa545b7525985ce97d99, type: 3}
+  m_Name: PerfilJugador
+  m_EditorClassIdentifier: 
+  vida: 5
+  estrellas: 3
+  velocidadSuelo: 6
+  velocidadAire: 2
+  fuerzaSalto: 8
+  jumpSFX: {fileID: 8300000, guid: e603a46a8f6f58e4c8c9961acc75f9c6, type: 3}
+  shootSFX: {fileID: 8300000, guid: bdddd03a2be42ed41b9f94c70914f563, type: 3}
+  coinSFX: {fileID: 8300000, guid: 6441ffecc82d4c947bfa008d22351b32, type: 3}
+  lifeSFX: {fileID: 8300000, guid: 94186de6ee99a23439eb3d9318d6b73c, type: 3}

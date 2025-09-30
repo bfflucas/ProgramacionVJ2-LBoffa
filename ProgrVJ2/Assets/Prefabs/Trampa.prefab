@@ -16,6 +16,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Trampa
       objectReference: {fileID: 0}
+    - target: {fileID: 4320690253587736695, guid: 8d0041a31a796f3428bd527f1babc96e, type: 3}
+      propertyPath: m_TagString
+      value: Suelo
+      objectReference: {fileID: 0}
     - target: {fileID: 8017653203957137808, guid: 8d0041a31a796f3428bd527f1babc96e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

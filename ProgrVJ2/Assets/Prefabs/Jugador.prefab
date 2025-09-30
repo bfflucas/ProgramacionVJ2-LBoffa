@@ -189,10 +189,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b394f025ab15943a4e1fc147ed007a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 5
+  perfilJugador: {fileID: 0}
   OnLivesChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &-1422864110067603847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -205,7 +217,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05c71f5a4da3d5745aa930eda4b22151, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 8
-  velocidadAire: 5
-  fuerzaSalto: 10
-  sonidoSalto: {fileID: 8300000, guid: e603a46a8f6f58e4c8c9961acc75f9c6, type: 3}
+  OnEstrellasChanged:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  puntoDisparo: {fileID: 0}
+  prefabEstrellaDisparo: {fileID: 0}
+  fuerzaDisparo: 10

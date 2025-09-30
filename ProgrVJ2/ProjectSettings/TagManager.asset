@@ -8,6 +8,8 @@ TagManager:
   - Meta
   - Plataforma
   - Suelo
+  - Star
+  - Enemigo
   layers:
   - Default
   - TransparentFX
@@ -19,7 +21,7 @@ TagManager:
   - Plataformas
   - Adornos
   - Jugador
-  - 
+  - Proyectiles
   - 
   - 
   - 
