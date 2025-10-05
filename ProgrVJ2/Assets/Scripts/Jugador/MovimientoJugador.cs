@@ -35,7 +35,7 @@ public class MovimientoJugador : MonoBehaviour
 
 
     private Queue<GameObject> colaEstrellas = new Queue<GameObject>();
-    
+
 
     private void Awake()
     {
@@ -52,12 +52,12 @@ public class MovimientoJugador : MonoBehaviour
 
         OnEstrellasChanged.Invoke(colaEstrellas.Count);
 
-        
+
         for (int i = 0; i < jugador.GetEstrellas(); i++)
         {
             GameObject estrella = Instantiate(prefabEstrellaDisparo);
             estrella.SetActive(false);
-            estrella.transform.SetParent(transform); 
+            estrella.transform.SetParent(transform);
             colaEstrellas.Enqueue(estrella);
         }
 
@@ -80,7 +80,7 @@ public class MovimientoJugador : MonoBehaviour
                 audioSource.PlayOneShot(jugador.PerfilJugador.JumpSFX);
         }
 
-        // Dirección automática según movimiento
+        // Direccion automatica segun movimiento
         if (moverHorizontal > 0.1f)
             direccionDisparo = 1;
         else if (moverHorizontal < -0.1f)
@@ -114,6 +114,8 @@ public class MovimientoJugador : MonoBehaviour
         if (saltando)
         {
             Vector2 vel = miRigidbody2D.linearVelocity;
+
+
             vel.y = 0f; // reset vertical antes del salto
             miRigidbody2D.linearVelocity = vel;
 
@@ -150,7 +152,7 @@ public class MovimientoJugador : MonoBehaviour
                 }
             }
 
-            // Detección de paredes
+            // Deteccion de paredes
             if (contact.normal.x > 0.5f)
                 tocandoParedIzquierda = true;
             if (contact.normal.x < -0.5f)
@@ -160,7 +162,7 @@ public class MovimientoJugador : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
-        // Mantener la detección de paredes mientras esté tocando
+        // Mantener la deteccion de paredes mientras este tocando
         foreach (ContactPoint2D contact in collision.contacts)
         {
             if (contact.normal.x > 0.5f)
@@ -172,7 +174,7 @@ public class MovimientoJugador : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
-        // Si dejás de tocar cualquier objeto con tag "Suelo" o "Plataforma" lateral
+        // Si dejo de tocar cualquier objeto con tag "Suelo" o "Plataforma" lateral
         if (collision.gameObject.CompareTag("Suelo") || collision.gameObject.CompareTag("Plataforma"))
         {
             // Reiniciamos detección de paredes
@@ -180,7 +182,7 @@ public class MovimientoJugador : MonoBehaviour
             tocandoParedDerecha = false;
         }
 
-        // Plataforma móvil
+        // Plataforma movil
         if (collision.gameObject.CompareTag("Plataforma"))
             plataformaRb = null;
     }
@@ -198,9 +200,19 @@ public class MovimientoJugador : MonoBehaviour
 
             OnEstrellasChanged?.Invoke(colaEstrellas.Count);
         }
+
+        if (collision.gameObject.CompareTag("Health"))
+        {
+            if (LevelManager.Instance != null)
+            {
+                if (jugador.PerfilJugador.JumpSFX != null)
+                    audioSource.PlayOneShot(jugador.PerfilJugador.CoinSFX);
+
+            }
+        }
     }
 
-    
+
     private void LanzarEstrella()
     {
         if (colaEstrellas.Count == 0) return;
@@ -235,11 +247,4 @@ public class MovimientoJugador : MonoBehaviour
         }
     }
 
-
-
-
-
-
-
 }
-

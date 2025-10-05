@@ -10,6 +10,7 @@ TagManager:
   - Suelo
   - Star
   - Enemigo
+  - Health
   layers:
   - Default
   - TransparentFX

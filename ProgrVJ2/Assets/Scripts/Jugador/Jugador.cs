@@ -8,7 +8,7 @@ public class Jugador : MonoBehaviour
     [SerializeField] private PerfilJugador perfilJugador;
 
     public PerfilJugador PerfilJugador { get => perfilJugador; }
-    //private bool win;
+    
 
     public int vida
     {
@@ -21,16 +21,7 @@ public class Jugador : MonoBehaviour
         get => perfilJugador.Estrellas;
         set => perfilJugador.Estrellas = value;
     }
-    //public bool Win { get => win; set => win = value; }
-
-
-    // Evento especial para cuando se queda sin vida
-    //[SerializeField] public event Action OnGameOver;
-    //[SerializeField] public event Action OnGameWon;
-
-
-    // Evento para cuando gana la partida
-    //public event Action OnGameWon;
+    
 
     [SerializeField] private UnityEvent<int> OnLivesChanged;
     
@@ -40,10 +31,7 @@ public class Jugador : MonoBehaviour
         OnLivesChanged.Invoke(vida);
         
     }
-    private void Start()
-    {
-        //Win = false;
-    }
+    
 
     public void ModificarVida(int puntos)
     {
@@ -56,7 +44,6 @@ public class Jugador : MonoBehaviour
             vida = 0;
 
             OnLivesChanged.Invoke(vida);
-            //OnGameOver.Invoke();  // Disparar Game Over
 
 
             // Avisar al LevelManager
@@ -82,9 +69,17 @@ public class Jugador : MonoBehaviour
             {
                 LevelManager.Instance.GameWin();  // gana
             }
+        }
 
-            //Win = true;
-            //SceneManager.LoadScene("EscenaFin");
+        if (collision.gameObject.CompareTag("Health"))
+        {
+            if (LevelManager.Instance != null)
+            {
+                collision.gameObject.SetActive(false);
+                vida++;
+                OnLivesChanged.Invoke(vida);
+            }
+
         }
     }
 

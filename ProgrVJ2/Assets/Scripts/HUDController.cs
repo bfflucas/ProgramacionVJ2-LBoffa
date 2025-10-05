@@ -12,7 +12,9 @@ public class HUDController : MonoBehaviour
     [SerializeField] GameObject contenedorEstrellas;
 
     [Header("Experiencia")]
-    [SerializeField] private TextMeshProUGUI textoExperiencia; 
+    [SerializeField] private TextMeshProUGUI textoExperiencia;
+
+
 
     // ------------------------------
     // VIDAS

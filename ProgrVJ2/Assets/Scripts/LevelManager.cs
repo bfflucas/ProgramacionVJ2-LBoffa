@@ -9,23 +9,38 @@ public class LevelManager : MonoBehaviour
     [SerializeField] private HUDController _hud;
     [SerializeField] private Jugador jugador;
 
-    // Estado del juego
-    //private bool won;
-    //public bool Won
-    //{
-    //    get => won;
-    //    set => won = value;
-    //}
-    //private bool lose;
-    //public bool Lose
-    //{
-    //    get => lose;
-    //    set => lose = value;
-    //}
+   
     public bool Won { get; private set; }
     public bool Lose { get; private set; }
 
     private int experiencia = 0;
+
+    
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        _hud = Object.FindFirstObjectByType<HUDController>();
+        jugador = Object.FindFirstObjectByType<Jugador>();
+
+        if (jugador != null && _hud != null)
+        {
+            _hud.ActualizarVidasHUD(jugador.GetVidas());
+            _hud.ActualizarEstrellasHUD(jugador.GetEstrellas());
+            _hud.ActualizarExperienciaHUD(experiencia);
+        }
+    }
+    // probarrrrr
+
 
     private void Awake()
     {
@@ -54,23 +69,6 @@ public class LevelManager : MonoBehaviour
             _hud.ActualizarExperienciaHUD(experiencia);
         }
     }
-
-
-    //private void Update()
-    //{
-    //    //if(won||lose)
-    //    if ((won || lose) && SceneManager.GetActiveScene().name != "EscenaFin")
-    //    {
-    //        SceneManager.LoadScene("EscenaFin");
-    //    }
-    //}
-
-    //private void ReiniciarJuego()
-    //{
-        
-    //    SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    //}
-    
 
     // ----------------------------
     // EXPERIENCIA

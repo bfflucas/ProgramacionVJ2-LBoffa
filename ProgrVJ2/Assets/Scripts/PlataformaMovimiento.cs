@@ -51,57 +51,5 @@ public class PlataformaMovimiento : MonoBehaviour
         {
             jugadorRb.MovePosition(jugadorRb.position + deltaMovimiento);
         }
-    }
-
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Player"))
-    //    {
-    //        jugadorRb = collision.gameObject.GetComponent<Rigidbody2D>();
-    //    }
-    //}
-
-    //private void OnCollisionExit2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.CompareTag("Player") && jugadorRb == collision.gameObject.GetComponent<Rigidbody2D>())
-    //    {
-    //        jugadorRb = null;
-    //    }
-    //}
+    }  
 }
-
-
-
-
-
-//void MoverHorizontal()
-//{
-//    if (moviendoPositivo)
-//    {
-//        transform.Translate(Vector2.right * velocidad * Time.deltaTime);
-//        if (transform.position.x >= posicionInicial.x + distancia)
-//            moviendoPositivo = false;
-//    }
-//    else
-//    {
-//        transform.Translate(Vector2.left * velocidad * Time.deltaTime);
-//        if (transform.position.x <= posicionInicial.x - distancia)
-//            moviendoPositivo = true;
-//    }
-//}
-
-//void MoverVertical()
-//{
-//    if (moviendoPositivo)
-//    {
-//        transform.Translate(Vector2.up * velocidad * Time.deltaTime);
-//        if (transform.position.y >= posicionInicial.y + distancia)
-//            moviendoPositivo = false;
-//    }
-//    else
-//    {
-//        transform.Translate(Vector2.down * velocidad * Time.deltaTime);
-//        if (transform.position.y <= posicionInicial.y - distancia)
-//            moviendoPositivo = true;
-//    }
-//}
