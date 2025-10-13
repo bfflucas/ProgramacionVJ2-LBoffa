@@ -1520,6 +1520,16 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
+  - first: {x: -10, y: -11, z: 0}
+    second:
+      serializedVersion: 2
+      m_TileIndex: 322
+      m_TileSpriteIndex: 316
+      m_TileMatrixIndex: 1
+      m_TileColorIndex: 0
+      m_TileObjectToInstantiateIndex: 65535
+      dummyAlignment: 0
+      m_AllTileFlags: 1073741826
   - first: {x: -8, y: -11, z: 0}
     second:
       serializedVersion: 2
@@ -4194,6 +4204,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 1520f4cf362d6444f821eedca2267cb1, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: bf0bdeaee1f3c684fb2f28463d38ccd0, type: 2}
+  - m_RefCount: 1
+    m_Data: {fileID: 11400000, guid: fb1f733b811d47441a8e4b2395d181aa, type: 2}
   m_TileSpriteArray:
   - m_RefCount: 1
     m_Data: {fileID: 952288734, guid: ad37804f0e215794e96448708482fba1, type: 3}
@@ -4827,7 +4839,7 @@ Tilemap:
     m_Data: {fileID: 785900394, guid: ad37804f0e215794e96448708482fba1, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: -465110437, guid: ad37804f0e215794e96448708482fba1, type: 3}
-  - m_RefCount: 1
+  - m_RefCount: 2
     m_Data: {fileID: -401938364, guid: ad37804f0e215794e96448708482fba1, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 1410049434, guid: ad37804f0e215794e96448708482fba1, type: 3}
@@ -4856,7 +4868,7 @@ Tilemap:
       e31: 0
       e32: 0
       e33: 1
-  - m_RefCount: 3
+  - m_RefCount: 4
     m_Data:
       e00: 1
       e01: 0
@@ -4875,13 +4887,13 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 344
+  - m_RefCount: 345
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Origin: {x: -8, y: -23, z: 0}
-  m_Size: {x: 27, y: 23, z: 1}
+  m_Origin: {x: -10, y: -23, z: 0}
+  m_Size: {x: 29, y: 23, z: 1}
   m_TileAnchor: {x: 0.5, y: 0.5, z: 0}
   m_TileOrientation: 0
   m_TileOrientationMatrix:
@@ -4967,6 +4979,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 10175202815435669, guid: 17baac39f400aed4bab107fda19a176c, type: 3}
       propertyPath: m_Layer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828711567940459560, guid: 17baac39f400aed4bab107fda19a176c, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4828711567940459560, guid: 17baac39f400aed4bab107fda19a176c, type: 3}
+      propertyPath: m_LightProbeUsage
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5472745240432767973, guid: 17baac39f400aed4bab107fda19a176c, type: 3}
@@ -5163,7 +5183,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7982198561609231694, guid: 8e4fb3a58b2ed0843a2266230b7d7dfe, type: 3}
   m_PrefabInstance: {fileID: 4924431154010416159}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &3860274785248347245
+--- !u!114 &6728679434500362472
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

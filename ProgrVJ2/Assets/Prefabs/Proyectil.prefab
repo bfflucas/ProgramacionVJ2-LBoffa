@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: -6257975987411573562}
   m_Layer: 10
   m_Name: Proyectil
-  m_TagString: Untagged
+  m_TagString: Proyectil
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 2397429283080183994}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 27.88456, y: 14.503887, z: -62.692856}
+  m_LocalPosition: {x: 27.88456, y: 14.503887, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

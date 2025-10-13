@@ -8,8 +8,10 @@ public class LevelManager : MonoBehaviour
     [Header("Referencias")]
     [SerializeField] private HUDController _hud;
     [SerializeField] private Jugador jugador;
-
    
+
+
+
     public bool Won { get; private set; }
     public bool Lose { get; private set; }
 
@@ -39,7 +41,6 @@ public class LevelManager : MonoBehaviour
             _hud.ActualizarExperienciaHUD(experiencia);
         }
     }
-    // probarrrrr
 
 
     private void Awake()

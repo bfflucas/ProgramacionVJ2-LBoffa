@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vida: 5
   estrellas: 3
-  velocidadSuelo: 6
-  velocidadAire: 2
-  fuerzaSalto: 8
+  velocidadSuelo: 8
+  velocidadAire: 4
+  fuerzaSalto: 12
   jumpSFX: {fileID: 8300000, guid: e603a46a8f6f58e4c8c9961acc75f9c6, type: 3}
   shootSFX: {fileID: 8300000, guid: bdddd03a2be42ed41b9f94c70914f563, type: 3}
   coinSFX: {fileID: 8300000, guid: 6441ffecc82d4c947bfa008d22351b32, type: 3}

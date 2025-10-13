@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9058c6953a8c924baef50bd1b598a92, type: 3}
+  m_Name: PerfilBoss
+  m_EditorClassIdentifier: 
+  energia: 10
+  tiempoEntreDisparos: 3
+  tiempoEntreEmbestidas: 4
+  tiempoEntreMovimientos: 3
+  distanciaEmbestida: 10
+  tiempoEmbestida: 2
+  limiteInferior: {x: 40, y: -1}
+  limiteSuperior: {x: 95, y: 50}
+  velocidadMovimiento: 20
+  bossTheme: {fileID: 8300000, guid: 61dc2e60f8d15af4db4d92ff7137a5ae, type: 3}
+  roar: {fileID: 8300000, guid: cdd3a1ec3a5fd4f4086bd0755a6033b4, type: 3}
+  fly: {fileID: 8300000, guid: 728b05885cbbc1e46b2b0951bca0c14f, type: 3}

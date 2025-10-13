@@ -191,7 +191,7 @@ public class MovimientoJugador : MonoBehaviour
     {
         if (collision.CompareTag("Star"))
         {
-            if (jugador.PerfilJugador.JumpSFX != null)
+            if (jugador.PerfilJugador.CoinSFX != null)
                 audioSource.PlayOneShot(jugador.PerfilJugador.CoinSFX);
             colaEstrellas.Enqueue(collision.gameObject);
             collision.gameObject.SetActive(false);
@@ -205,7 +205,7 @@ public class MovimientoJugador : MonoBehaviour
         {
             if (LevelManager.Instance != null)
             {
-                if (jugador.PerfilJugador.JumpSFX != null)
+                if (jugador.PerfilJugador.CoinSFX != null)
                     audioSource.PlayOneShot(jugador.PerfilJugador.CoinSFX);
 
             }

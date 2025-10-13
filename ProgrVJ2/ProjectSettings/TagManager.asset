@@ -11,6 +11,9 @@ TagManager:
   - Star
   - Enemigo
   - Health
+  - Boss
+  - Proyectil
+  - ProyectilEnemigo
   layers:
   - Default
   - TransparentFX
@@ -23,8 +26,8 @@ TagManager:
   - Adornos
   - Jugador
   - Proyectiles
-  - 
-  - 
+  - ProyectilesEnemigos
+  - Boss
   - 
   - 
   - 
