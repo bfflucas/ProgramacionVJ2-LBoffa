@@ -19,7 +19,7 @@ MonoBehaviour:
   distanciaEmbestida: 10
   tiempoEmbestida: 2
   limiteInferior: {x: 40, y: -1}
-  limiteSuperior: {x: 95, y: 50}
+  limiteSuperior: {x: 95, y: 40}
   velocidadMovimiento: 20
   bossTheme: {fileID: 8300000, guid: 61dc2e60f8d15af4db4d92ff7137a5ae, type: 3}
   roar: {fileID: 8300000, guid: cdd3a1ec3a5fd4f4086bd0755a6033b4, type: 3}

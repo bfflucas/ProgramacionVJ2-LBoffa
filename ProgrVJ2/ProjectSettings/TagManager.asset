@@ -14,6 +14,7 @@ TagManager:
   - Boss
   - Proyectil
   - ProyectilEnemigo
+  - Trampas
   layers:
   - Default
   - TransparentFX
@@ -28,7 +29,7 @@ TagManager:
   - Proyectiles
   - ProyectilesEnemigos
   - Boss
-  - 
+  - Trampas
   - 
   - 
   - 

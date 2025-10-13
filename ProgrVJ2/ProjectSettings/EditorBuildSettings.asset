@@ -15,8 +15,8 @@ EditorBuildSettings:
     path: Assets/Scenes/EscenaFin.unity
     guid: eeccacfa3302d05428a585e34c488814
   - enabled: 1
-    path: Assets/Scenes/BossScene.unity
-    guid: e631c4b4ea92ee943b78611391d46746
+    path: Assets/Scenes/BossLevel1.unity
+    guid: 88f7292f337f70a43a96863880ffef5a
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

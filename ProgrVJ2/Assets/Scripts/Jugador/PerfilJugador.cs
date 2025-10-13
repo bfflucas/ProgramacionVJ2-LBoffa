@@ -19,6 +19,7 @@ public class PerfilJugador : ScriptableObject
     [SerializeField] private AudioClip shootSFX;
     [SerializeField] private AudioClip coinSFX;
     [SerializeField] private AudioClip lifeSFX;
+    [SerializeField] private AudioClip uhSFX;
 
 
     //private AudioSource audioSource;
@@ -31,6 +32,5 @@ public class PerfilJugador : ScriptableObject
     public AudioClip ShootSFX { get => shootSFX; }
     public AudioClip CoinSFX { get => coinSFX; }
     public AudioClip LifeSFX { get => lifeSFX; }
-
-
+    public AudioClip UhSFX { get => uhSFX; set => uhSFX = value; }
 }

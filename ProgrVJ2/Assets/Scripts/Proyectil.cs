@@ -58,7 +58,7 @@ public class Proyectil : MonoBehaviour
                 Destroy(tempAudio, uhSFX.length); // se destruye después de sonar
             }
 
-            Destroy(collision.gameObject);
+            collision.gameObject.SetActive(false);
 
             // AGREGAR EXPERIENCIA AL HUD
             LevelManager.Instance.AgregarExperiencia(10);
