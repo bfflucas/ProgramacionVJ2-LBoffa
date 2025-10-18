@@ -2,7 +2,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody2D))]
 [RequireComponent(typeof(Collider2D))]
-public class Proyectil : MonoBehaviour
+public class ProyectilJugador : MonoBehaviour
 {
     private Rigidbody2D rb;
     private float vidaMaxima = 5f; // tiempo máximo antes de desactivarse

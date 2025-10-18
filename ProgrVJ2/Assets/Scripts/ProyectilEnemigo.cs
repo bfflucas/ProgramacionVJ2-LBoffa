@@ -4,9 +4,15 @@ using UnityEngine;
 [RequireComponent(typeof(Collider2D))]
 public class ProyectilEnemigo : MonoBehaviour
 {
-    private Rigidbody2D rb;
-    private float vidaMaxima = 5f;
+    [Header("Configuracion")]
+    [SerializeField] int puntos = 5;
+    [SerializeField] private float vidaMaxima = 5f;
+
+
     private float tiempoVivo;
+
+    private Rigidbody2D rb;
+    
 
     [SerializeField] public float velocidad = 30f;
     [SerializeField] private AudioClip uhSFX;
@@ -41,6 +47,10 @@ public class ProyectilEnemigo : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+
+            Jugador jugador = collision.gameObject.GetComponent<Jugador>();
+            jugador.ModificarVida(-puntos);
+
             if (uhSFX != null)
             {
                 GameObject tempAudio = new GameObject("TempAudio");
@@ -50,9 +60,11 @@ public class ProyectilEnemigo : MonoBehaviour
                 a.Play();
                 Destroy(tempAudio, uhSFX.length);
             }
-        }
+            
 
-        Desactivar();
+        }
+        if (!collision.gameObject.CompareTag("Enemigo"))
+            Desactivar();
     }
 
     private void Desactivar()

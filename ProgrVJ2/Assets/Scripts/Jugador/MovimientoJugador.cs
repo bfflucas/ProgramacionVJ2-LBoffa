@@ -233,7 +233,7 @@ public class MovimientoJugador : MonoBehaviour
             return;
         }
 
-        Proyectil proyectil = proyectilGO.GetComponent<Proyectil>();
+        ProyectilJugador proyectil = proyectilGO.GetComponent<ProyectilJugador>();
         if (proyectil == null)
         {
             Debug.LogError("El prefab NO tiene el script Proyectil!");

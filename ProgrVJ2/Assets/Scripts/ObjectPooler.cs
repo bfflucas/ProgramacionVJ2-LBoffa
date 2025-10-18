@@ -8,7 +8,7 @@ public class ObjectPooler : MonoBehaviour
 
     private List<GameObject> objectPool;
 
-    private void Awake()
+    private void Start()  //Awake
     {
         objectPool = new List<GameObject>();
         for (int i = 0; i < poolSize; i++)
