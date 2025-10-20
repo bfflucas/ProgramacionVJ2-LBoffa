@@ -3,6 +3,10 @@ using UnityEngine;
 
 public class HUDController : MonoBehaviour
 {
+
+    [SerializeField] TextMeshProUGUI miTexto;
+
+
     [Header("Vidas")]
     [SerializeField] GameObject iconoVida;
     [SerializeField] GameObject contenedorVida;
@@ -14,6 +18,38 @@ public class HUDController : MonoBehaviour
     [Header("Experiencia")]
     [SerializeField] private TextMeshProUGUI textoExperiencia;
 
+
+    private void OnEnable()
+    {
+        GameEvents.OnPause += Pausar;  //con += asignamos el metodo que va a responder (no poner parentesis)
+        GameEvents.OnResume += Reanudar;
+    }
+
+    private void OnDisable()
+    {
+        //buena practica: desuscribirse a los eventos
+        GameEvents.OnPause -= Pausar;
+        GameEvents.OnResume -= Reanudar;
+    }
+
+    private void Pausar()
+    {
+        ActualizarTextoHUD("PAUSADO");
+    }
+
+    private void Reanudar()
+    {
+        ActualizarTextoHUD("");
+    }
+
+    // ------------------------------
+    // TEXTO HUD
+    // ------------------------------
+
+    public void ActualizarTextoHUD(string nuevoTexto)
+    {
+        miTexto.text = nuevoTexto;
+    }
 
 
     // ------------------------------

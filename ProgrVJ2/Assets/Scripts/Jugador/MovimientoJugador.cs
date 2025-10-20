@@ -13,6 +13,9 @@ public class MovimientoJugador : MonoBehaviour
     [SerializeField] private UnityEvent<int> OnEstrellasChanged;
 
     private Rigidbody2D miRigidbody2D;
+    private Animator miAnimator;
+    private SpriteRenderer miSprite;
+
     private float moverHorizontal;
     private bool puedoSaltar = true;
     private bool saltando = false;
@@ -45,6 +48,8 @@ public class MovimientoJugador : MonoBehaviour
     private void OnEnable()
     {
         miRigidbody2D = GetComponent<Rigidbody2D>();
+        miAnimator = GetComponent<Animator>();
+        miSprite = GetComponent<SpriteRenderer>();
 
         audioSource = GetComponent<AudioSource>();
         if (audioSource == null)
@@ -110,18 +115,31 @@ public class MovimientoJugador : MonoBehaviour
         Vector2 nuevaVel = new Vector2(velX, miRigidbody2D.linearVelocity.y);
         miRigidbody2D.linearVelocity = nuevaVel;
 
+        // --- ANIMACION SOLO EN EL SUELO ---
+        if (puedoSaltar)
+        {
+            int velocidadX = (int)miRigidbody2D.linearVelocity.x;
+            miSprite.flipX = miRigidbody2D.linearVelocity.x < 0;
+            miAnimator.SetInteger("Velocidad", velocidadX);
+
+            miAnimator.SetBool("EnAire", false);
+
+        }
+        else
+        {
+            miAnimator.SetInteger("Velocidad", 0);
+            miAnimator.SetBool("EnAire", miRigidbody2D.linearVelocityY != 0);
+        }
+
         // Aplicar salto
         if (saltando)
         {
             Vector2 vel = miRigidbody2D.linearVelocity;
-
-
             vel.y = 0f; // reset vertical antes del salto
             miRigidbody2D.linearVelocity = vel;
 
             miRigidbody2D.AddForce(Vector2.up * jugador.PerfilJugador.FuerzaSalto, ForceMode2D.Impulse);
             saltando = false;
-
             plataformaRb = null;
         }
 
@@ -134,8 +152,19 @@ public class MovimientoJugador : MonoBehaviour
         }
     }
 
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        // Ignorar colisión con enemigos y bosses para que no se quede pegado
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Boss"))
+        {
+            Collider2D playerCollider = GetComponent<Collider2D>();
+            Collider2D enemyCollider = collision.collider;
+            Physics2D.IgnoreCollision(playerCollider, enemyCollider, true);
+
+            
+        }
+
         foreach (ContactPoint2D contact in collision.contacts)
         {
             // Salto solo si contacto viene desde arriba
@@ -150,6 +179,8 @@ public class MovimientoJugador : MonoBehaviour
                     plataformaRb = collision.gameObject.GetComponent<Rigidbody2D>();
                     deltaPlataforma = plataformaRb.position;
                 }
+
+                
             }
 
             // Deteccion de paredes
@@ -162,6 +193,14 @@ public class MovimientoJugador : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Boss"))
+        {
+            Collider2D playerCollider = GetComponent<Collider2D>();
+            Collider2D enemyCollider = collision.collider;
+            Physics2D.IgnoreCollision(playerCollider, enemyCollider, false); // restauramos colisión
+            return;
+        }
+
         // Mantener la deteccion de paredes mientras este tocando
         foreach (ContactPoint2D contact in collision.contacts)
         {
@@ -174,6 +213,15 @@ public class MovimientoJugador : MonoBehaviour
 
     private void OnCollisionExit2D(Collision2D collision)
     {
+
+        if (collision.gameObject.CompareTag("Enemy") || collision.gameObject.CompareTag("Boss"))
+        {
+            Collider2D playerCollider = GetComponent<Collider2D>();
+            Collider2D enemyCollider = collision.collider;
+            Physics2D.IgnoreCollision(playerCollider, enemyCollider, false); // restauramos colisión
+            return;
+        }
+
         // Si dejo de tocar cualquier objeto con tag "Suelo" o "Plataforma" lateral
         if (collision.gameObject.CompareTag("Suelo") || collision.gameObject.CompareTag("Plataforma"))
         {
@@ -248,3 +296,5 @@ public class MovimientoJugador : MonoBehaviour
     }
 
 }
+
+

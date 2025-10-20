@@ -4,22 +4,16 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager Instance { get; private set; }
 
-    public Vector3[] cameraPositions;
-    public Vector3[] doorPositions;
-    public Vector3 initialPlayerPosition;
+    //TODO  centralizar este singleton
+    
 
-    private int playerLifes = 5;
-    public int PlayerLifes
-    {
-        get => playerLifes;
-        private set => playerLifes = Mathf.Max(0, value);
-    }
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
+            DontDestroyOnLoad(gameObject);  //el game object se llama GameManagerSingleton y el componente se llama game manager
+            //con esto conservamos el game object a lo largo de las escenas
         }
         else
         {
@@ -27,14 +21,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+
     private void OnEnable()
     {
-        GameEvents.OnPause += Pausar;
+        GameEvents.OnPause += Pausar;  //con += asignamos el metodo que va a responder (no poner parentesis)
         GameEvents.OnResume += Reanudar;
     }
 
     private void OnDisable()
     {
+        //buena practica: desuscribirse a los eventos
         GameEvents.OnPause -= Pausar;
         GameEvents.OnResume -= Reanudar;
     }
@@ -64,23 +60,5 @@ public class GameManager : MonoBehaviour
                 GameEvents.TriggerResume();
             }
         }
-    }
-
-    public void AddLifes(int amount)
-    {
-        PlayerLifes += amount;
-
-        Debug.Log($"Vidas actualizadas: {PlayerLifes}");
-    }
-
-    public int GetLifes()
-    {
-        return PlayerLifes;
-    }
-
-    public void ResetLifes()
-    {
-        PlayerLifes = 5;
-        Debug.Log("vidas reiniciadas");
     }
 }

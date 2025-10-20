@@ -5,6 +5,7 @@ public class PerfilJugador : ScriptableObject
 {
     [Header("Configuracion")]
     [SerializeField][Range(5,10)] private int vida = 5;
+    [SerializeField][Range(5, 10)] private int maxVida = 5;
     [SerializeField] private int estrellas = 3;
     public int Estrellas { get => estrellas; set => estrellas = value; }
 
@@ -33,4 +34,5 @@ public class PerfilJugador : ScriptableObject
     public AudioClip CoinSFX { get => coinSFX; }
     public AudioClip LifeSFX { get => lifeSFX; }
     public AudioClip UhSFX { get => uhSFX; set => uhSFX = value; }
+    public int MaxVida { get => maxVida; }
 }
