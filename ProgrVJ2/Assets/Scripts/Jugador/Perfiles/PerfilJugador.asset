@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: PerfilJugador
   m_EditorClassIdentifier: 
   vida: 5
+  maxVida: 5
   estrellas: 3
   velocidadSuelo: 8
   velocidadAire: 4
@@ -21,3 +22,4 @@ MonoBehaviour:
   shootSFX: {fileID: 8300000, guid: bdddd03a2be42ed41b9f94c70914f563, type: 3}
   coinSFX: {fileID: 8300000, guid: 6441ffecc82d4c947bfa008d22351b32, type: 3}
   lifeSFX: {fileID: 8300000, guid: 94186de6ee99a23439eb3d9318d6b73c, type: 3}
+  uhSFX: {fileID: 8300000, guid: 6b2cc29903ec6c441b6ee8036fce90a4, type: 3}

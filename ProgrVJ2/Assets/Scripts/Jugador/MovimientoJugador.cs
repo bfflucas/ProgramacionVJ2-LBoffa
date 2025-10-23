@@ -162,7 +162,7 @@ public class MovimientoJugador : MonoBehaviour
             Collider2D enemyCollider = collision.collider;
             Physics2D.IgnoreCollision(playerCollider, enemyCollider, true);
 
-            
+
         }
 
         foreach (ContactPoint2D contact in collision.contacts)
@@ -180,7 +180,7 @@ public class MovimientoJugador : MonoBehaviour
                     deltaPlataforma = plataformaRb.position;
                 }
 
-                
+
             }
 
             // Deteccion de paredes
@@ -190,6 +190,9 @@ public class MovimientoJugador : MonoBehaviour
                 tocandoParedDerecha = true;
         }
     }
+
+
+
 
     private void OnCollisionStay2D(Collision2D collision)
     {

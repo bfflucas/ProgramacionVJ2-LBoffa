@@ -66,8 +66,7 @@ public class Jugador : MonoBehaviour
         OnLivesChanged.Invoke(vida);
     }
 
-
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
