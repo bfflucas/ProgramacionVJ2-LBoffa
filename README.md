@@ -1,46 +1,50 @@
-# 2D Platformer Game (Unity)
 
-Un mini juego de plataformas 2D desarrollado en Unity.
 
-El jugador debe atravesar distintos niveles saltando entre plataformas, evitando obstáculos y enemigos, y recolectando objetos.
+# 2D Platformer Game - Unity
 
-## Características
+<p align="center">
+  Mini juego de plataformas 2D hecho en Unity
+</p>
 
-- Movimiento lateral clásico de plataformas
-- Sistema de salto y gravedad
-- Obstáculos y enemigos
-- Diferentes niveles
-- Recolección de objetos: Corazones para recuperar salud y Estrellas para disparar a los enemigos
-- Controles simples y fluidos
+## Descripcion
 
-## Tecnologías utilizadas
+Un juego de plataformas 2D donde el jugador debe atravesar niveles, evitar enemigos y obstaculos, y recolectar objetos para sobrevivir y avanzar.
+
+Los corazones permiten recuperar salud, mientras que las estrellas sirven para disparar a los enemigos.
+
+## Caracteristicas
+
+- Plataformas 2D
+- Movimiento lateral
+- Salto
+- Sistema de salud
+- Recoleccion de corazones
+- Disparo con estrellas
+- Enemigos y obstaculos
+
+## Tecnologias utilizadas
 
 - Unity
 - C#
-- Motor de física 2D de Unity
+- Fisica 2D de Unity
+- Visual Studio
 
 ## Controles
 
-| Tecla | Acción |
-|------|------|
+| Tecla | Accion |
+|------|--------|
 | A / D o Flechas | Moverse |
 | Espacio | Saltar |
-
 
 ## Screenshots
 
 <p align="center">
-  <img src="Screenshots/unity2.png" width="600">
-</p>
-
-<p align="center">
-  <img src="Screenshots/unity3.png" width="600">
-</p>
-
-<p align="center">
-  <img src="Screenshots/unity4.png" width="600">
+  <img src="Screenshots/unity2.png" width="30%">
+  <img src="Screenshots/unity3.png" width="30%">
+  <img src="Screenshots/unity4.png" width="30%">
 </p>
 
 ## Jugar
 
-- Se puede descargar desde Releases o jugar en https://lucasbff85.itch.io/progrvj2-tp
+[Itch.io - Jugar ahora](https://lucasbff85.itch.io/progrvj2-tp)
+
