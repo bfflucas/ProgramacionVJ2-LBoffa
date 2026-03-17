@@ -22,7 +22,7 @@ Los corazones permiten recuperar salud, mientras que las estrellas sirven para d
 - Disparo con estrellas
 - Enemigos y obstáculos
 
-## Tecnologias utilizadas
+## Tecnologías utilizadas
 
 - Unity
 - C#
