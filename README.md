@@ -39,10 +39,11 @@ Los corazones permiten recuperar salud, mientras que las estrellas sirven para d
 ## Screenshots
 
 <p align="center">
-  <img src="Screenshots/unity2.png" width="30%">
-  <img src="Screenshots/unity3.png" width="30%">
-  <img src="Screenshots/unity4.png" width="30%">
+  <img width="1559" height="1119" alt="unity4" src="https://github.com/user-attachments/assets/bb7df2ab-207d-44e0-a0d6-43bfb4beae4a" />
+  <img width="1856" height="1076" alt="unity3" src="https://github.com/user-attachments/assets/de861f53-fc7b-4726-98af-7e59b819416c" />
+  <img width="1972" height="1093" alt="unity2" src="https://github.com/user-attachments/assets/337d18a7-e276-4833-802b-dbd20740bb54" />
 </p>
+
 
 ## Jugar
 
