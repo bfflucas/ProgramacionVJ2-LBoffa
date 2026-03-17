@@ -6,27 +6,27 @@
   Mini juego de plataformas 2D hecho en Unity
 </p>
 
-## Descripcion
+## Descripción
 
-Un juego de plataformas 2D donde el jugador debe atravesar niveles, evitar enemigos y obstaculos, y recolectar objetos para sobrevivir y avanzar.
+Un juego de plataformas 2D donde el jugador debe atravesar niveles, evitar enemigos y obstáculos, y recolectar objetos para sobrevivir y avanzar.
 
 Los corazones permiten recuperar salud, mientras que las estrellas sirven para disparar a los enemigos.
 
-## Caracteristicas
+## Características
 
 - Plataformas 2D
 - Movimiento lateral
 - Salto
 - Sistema de salud
-- Recoleccion de corazones
+- Recolección de corazones
 - Disparo con estrellas
-- Enemigos y obstaculos
+- Enemigos y obstáculos
 
 ## Tecnologias utilizadas
 
 - Unity
 - C#
-- Fisica 2D de Unity
+- Física 2D de Unity
 - Visual Studio
 
 ## Controles
