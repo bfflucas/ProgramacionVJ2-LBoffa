@@ -39,13 +39,29 @@ Los corazones permiten recuperar salud, mientras que las estrellas sirven para d
 ## Screenshots
 
 <p align="center">
-  <img width="1559" height="1119" alt="unity4" src="https://github.com/user-attachments/assets/bb7df2ab-207d-44e0-a0d6-43bfb4beae4a" />
-  <img width="1856" height="1076" alt="unity3" src="https://github.com/user-attachments/assets/de861f53-fc7b-4726-98af-7e59b819416c" />
-  <img width="1972" height="1093" alt="unity2" src="https://github.com/user-attachments/assets/337d18a7-e276-4833-802b-dbd20740bb54" />
+
+<img src="https://github.com/user-attachments/assets/337d18a7-e276-4833-802b-dbd20740bb54" 
+width="30%" 
+style="border:3px solid #555; margin:10px; border-radius:8px;">
+
+<img src="https://github.com/user-attachments/assets/de861f53-fc7b-4726-98af-7e59b819416c" 
+width="30%" 
+style="border:3px solid #555; margin:10px; border-radius:8px;">
+
+<img src="https://github.com/user-attachments/assets/bb7df2ab-207d-44e0-a0d6-43bfb4beae4a" 
+width="30%" 
+style="border:3px solid #555; margin:10px; border-radius:8px;">
+
+
+
+
+
 </p>
 
 
 ## Jugar
+
+Podés descargar una versión del proyecto en la sección de releases o jugarlo en el navegador desde:
 
 [Itch.io - Jugar ahora](https://lucasbff85.itch.io/progrvj2-tp)
 
