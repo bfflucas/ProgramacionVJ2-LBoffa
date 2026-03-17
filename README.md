@@ -54,8 +54,6 @@ style="border:3px solid #555; margin:10px; border-radius:8px;">
 
 
 
-
-
 </p>
 
 
@@ -65,3 +63,7 @@ Podés descargar una versión del proyecto en la sección de releases o jugarlo 
 
 [Itch.io - Jugar ahora](https://lucasbff85.itch.io/progrvj2-tp)
 
+## Autor
+
+Lucas Boffa  
+UNL – Tecnicatura en Diseño y Desarrollo de Videojuegos 
